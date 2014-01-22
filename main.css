@@ -1,7 +1,25 @@
-.prof-item {
-  width: 400px;
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-.text {
+.prof-item .content-box {
+  width: 300px;
+  height: 100px;
+}
+
+.prof-item {
   max-width: 100%;
+  margin-bottom: 20px;
+}
+
+.prof-item p, .prof-item textarea{
+  width: 100px;
+  height: auto;
+  display: inline-block;
+  vertical-align: top;
+  margin: 0;
+  border: 1px solid green;
+  font-size: 14px;
 }

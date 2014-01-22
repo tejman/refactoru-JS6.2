@@ -1,25 +1,27 @@
 $(document).ready(function() {
-  $(".text").on("click", function() {
+  $(".content-box").on("click", function() {
 
     var content = $(this).text();
-    var myInput = $("<input type:'text'>"+content+"</input>");
+    var myInput = $("<textarea>"+content+"</textarea>");
+    myInput.addClass($(this).attr("class"));
 
     $(this).closest(".prof-item").append(myInput);
-    $(this).css("display", "none");
+    $(this).hide();
 
   });
 
-  $(".prof-item").on("blur", "input", function(){
+  $(".prof-item").on("blur", "textarea", function(){
     
     var userInput = $(this).val();
+    console.log(userInput==="");
     
-    if(userInput!="") {
-      $(this).siblings(".text").text(userInput);
-      $(this).siblings(".text").css('display', "block");
+    if(userInput==="") {
+      $(this).siblings(".content-box").show();
       $(this).remove();
     }
     else {
-      $(this).siblings(".text").css('display', "block");
+      $(this).siblings(".content-box").text(userInput);
+      $(this).siblings(".content-box").show();
       $(this).remove();
     }
 
